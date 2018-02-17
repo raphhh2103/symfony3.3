@@ -1,0 +1,104 @@
+#main_homepage:
+#    path:     /hello
+#    defaults: { _controller: MainBundle:Default:index }
+#
+#main_Default_home:
+#    path:     /home/{nom}
+#    defaults:
+#        _controller: MainBundle:Default:home
+#        nom: Guillaume
+
+
+main_index:
+    path:   /index
+    defaults:
+        _controller: MainBundle:Home:index
+
+main_aboutUs:
+    path:   /aboutUs
+    defaults:
+        _controller: MainBundle:Home:aboutUs
+
+main_contact:
+    path:   /contact
+    defaults:
+        _controller: MainBundle:Home:contact
+
+main_send_email:
+    path:   /send
+    defaults:
+        _controller: MainBundle:Home:sendEmail
+
+main_category_index:
+    path:   /category/index
+    defaults:
+        _controller: MainBundle:Category:index
+
+main_category_create:
+    path:   /category/create
+    defaults:
+        _controller: MainBundle:Category:create
+
+main_category_update:
+    path:   /category/update/{id}
+    defaults:
+        _controller: MainBundle:Category:update
+    requirements:
+        id: \d+
+
+main_category_delete:
+    path:   /category/delete/{id}
+    defaults:
+        _controller: MainBundle:Category:delete
+    requirements:
+        id: \d+
+
+main_platform_index:
+    path:   /platform/index/
+    defaults:
+        _controller: MainBundle:Platform:index
+
+main_platform_update:
+    path:   /platform/update/{id}
+    defaults:
+        _controller: MainBundle:Platform:update
+
+main_platform_create:
+    path:   /platform/create/
+    defaults:
+        _controller: MainBundle:Platform:create
+
+main_platform_delete:
+    path:   /platform/delete/{id}
+    defaults:
+        _controller: MainBundle:Platform:delete
+
+main_jeux_index:
+    path:   /jeux/index/
+    defaults:
+        _controller: MainBundle:Jeux:index
+
+main_jeux_create:
+    path:   /jeux/create/
+    defaults:
+        _controller: MainBundle:Jeux:create
+
+main_jeux_details:
+    path:   /jeux/details/{id}
+    defaults:
+        _controller: MainBundle:Jeux:details
+
+main_jeux_update:
+    path: /jeux/update/{id}
+    defaults:
+        _controller: MainBundle:Jeux:update
+
+main_user_register:
+    path:   /register
+    defaults:
+        _controller: MainBundle:User:register
+#main_user_login:
+#    path:   /user/login/
+#    defaults:
+#        _controller: MainBundle:User:login
+

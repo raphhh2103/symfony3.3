@@ -1,0 +1,40 @@
+.login{
+    box-shadow: 15px 15px 155px 85px #FF763B;
+    background-color: white;
+    border-radius: 20px 20px 20px 20px;
+    text-align: center;
+    /*padding-top: 125px; !important;*/
+    margin: auto;
+    border: solid 1px;
+    height: 400px;
+    width: 400px;
+    margin-top: 150px;
+
+}
+.inputD{
+    font-size: small;
+    height: 25px;
+    width: 150px;
+}
+#lastname{
+    width: 50%;
+}
+#password{
+    width: 50%;
+
+}
+.divN{
+    bottom: 5px;
+    margin-left: 125px;
+}
+.divP{
+    margin-bottom: 5px;
+    margin-left: 125px;
+}
+.inputL{
+    margin-top: 50px;
+}
+h2{
+    margin-top: 50px;
+    margin-bottom: 75px;
+}

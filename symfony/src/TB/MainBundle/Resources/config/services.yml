@@ -1,0 +1,4 @@
+services:
+    main.mailer:
+        class: TB\MainBundle\Utils\Mailer
+        arguments: ["%mailer_host%", "%mailer_user%", "%mailer_password%","@swift_Mailer"]

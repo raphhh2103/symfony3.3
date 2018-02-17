@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="http://localhost/symfony/web/assets/css/main.css">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div style="text-align: center; color: white">
+            <h1>Platforme</h1>
+
+            {% for plat in platform %}
+
+                {{ plat.platformName }}
+                <span><a href="{{ path("main_platform_update", {"id": plat.id}) }}">Modifier</a></span>
+                <span><a href="{{ path("main_platform_delete", {"id": plat.id}) }}">Supprimer</a></span>
+                <br>
+
+            {% endfor %}
+
+            <a href="{{ path('main_platform_create') }}">
+                <button>Nouveau</button>
+            </a>
+        </div>
+    </div>
+{% endblock %}

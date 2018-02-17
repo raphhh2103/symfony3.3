@@ -1,0 +1,45 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
+security:
+    encoders:
+        TB\MainBundle\entity\User:
+            algorithm: plaintext
+    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+        main:
+            entity:
+                class: MainBundle:User
+                property: userEmail
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|assets)/
+            security: false
+
+        login:
+            pattern: ^/login$
+            anonymous: true
+
+        register:
+            pattern: ^/register$
+            anonymous: true
+
+        main:
+            anonymous: true
+            pattern: ^/
+            form_login:
+                login_path: /login
+                check_path: /login-check
+                default_target_path: main_index
+                always_use_default_target_path: true
+            logout:
+                path: /logout
+                target: /login
+            # activate different ways to authenticate
+
+            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+            #http_basic: ~
+
+            # https://symfony.com/doc/current/security/form_login_setup.html
+            #form_login: ~

@@ -1,0 +1,60 @@
+{% extends "base.html.twig" %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="http://localhost/symfony/web/assets/css/createJ.css">
+
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="titre"><h1>Tous nos jeux</h1></div>
+        <div id="div">
+            <div class="row">
+            {% for jeux in jeux %}
+
+                <div class="col-md-2">
+                    <div class="thumbnail">
+                        <a href="{{ path('main_jeux_details', {'id':jeux.id}) }}">
+                            {% if jeux.pictures|length > 0 %}
+                                <img class="tmb_img" src="http://localhost/symfony/web/{{ jeux.pictures[0].PictureURL }}" >
+                            {% else %}
+                                <img class="tmb_img" src="http://localhost/symfony/web/assets/image/imageDefault.jpg" >
+                            {% endif %}
+                            <div class="caption">
+                                <p>{{ jeux.jeuxName }}</p>
+                                <a href="{{ path('main_jeux_update',{'id':jeux.id}) }}">Modifier</a>
+                            </div>
+                        </a>
+                    </div>
+
+
+
+                </div>
+
+            {% endfor %}
+            </div>
+        </div>
+
+
+
+        {#<div class="tabJeu">#}
+            {#<table class="table table-bordered">#}
+                {#<thead>#}
+                {#<tr>#}
+                    {#<th>Titre</th>#}
+                    {#<th>Catégorie</th>#}
+
+                {#</tr>#}
+                {#</thead>#}
+                {#<tbody>#}
+                {#{% for jeux in jeux %}#}
+                    {#<tr>#}
+                        {#<td><a href="{{ path('main_jeux_details', {'id':jeux.id}) }}">{{ jeux.jeuxName }}</a></td>#}
+                        {#<td>{{ jeux.category.categoryName }}</td>#}
+
+                    {#</tr>#}
+                {#{% endfor %}#}
+                {#</tbody>#}
+            {#</table>#}
+        {#</div>#}
+    </div>
+{% endblock %}

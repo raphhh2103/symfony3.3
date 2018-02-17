@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="http://localhost/symfony/web/assets/css/createJ.css">
+
+{% endblock %}
+
+
+{% block body %}
+    <div class="container">
+        <div class="titre"><h1>Modifier le jeu</h1></div>
+        <div class="createJeux">
+            {{ form_start(form, {'attr':{'class':'form-horizontal'}}) }}
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    {{ form_row(form.jeuxName) }}
+                </div>
+            </div>
+            <div class="row">
+                {{ form_label(form.jeuxName) }}
+                <br>
+                {{ form_widget(form.jeuxName) }}
+            </div>
+
+            <div class="row">
+                {{ form_row(form.submit) }}
+            </div>
+            {#<div class="row">#}
+                {#<div id="platform_container" class="col-md-6"></div>#}
+                {#<div id="picture_container" class="col-md-6"></div>#}
+            {#</div>#}
+
+
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script>
+        var btn_add_platfrom = document.getElementById('add_platform');
+        var prototype = document.getElementById('tb_mainbundle_jeux_gamePlatforms').getAttribute('data-prototype');
+        var platform_container = document.getElementById('platform_container');
+
+        var compt = 0;
+        btn_add_platfrom.addEventListener("click", function () {
+            compt++;
+            var div = document.createElement("div");
+            div.setAttribute("class", "col-md-6 test");
+            div.innerHTML = prototype
+                .replace("__name__label__", "Platforme n°" + compt)
+                .replace(/__name__/g, compt - 1);
+            platform_container.appendChild(div);
+
+
+        });
+        var btn_add_picture = document.getElementById('add_picture');
+        var prototype2 = document.getElementById('tb_mainbundle_jeux_pictures').getAttribute('data-prototype');
+        var picture_container = document.getElementById('picture_container');
+
+        var compt2 = 0;
+        btn_add_picture.addEventListener("click", function () {
+            compt2++;
+            var div = document.createElement("div");
+            div.setAttribute("class", "col-md-6 test");
+            div.innerHTML = prototype2
+                .replace("__name__label__", "Image n°" + compt2)
+                .replace(/__name__/g, compt2 - 1);
+            picture_container.appendChild(div);
+
+
+        });
+    </script>
+{% endblock %}
+
+
+

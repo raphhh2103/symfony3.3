@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="http://localhost/symfony/web/assets/css/detailJ.css">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+    {#{{ dump(jeux) }}#}
+    {% for pictures in jeux.pictures %}
+        <img src="http://localhost/symfony/web/{{ pictures.PictureURL }}">
+    {% endfor %}
+    <p>Nom du jeu : {{ jeux.JeuxName }}</p>
+    <p>Categorie : {{ jeux.category.categoryName }}</p>
+    {% for platform in jeux.gamePlatforms %}
+        <p>{{ platform.platform.platformName }}</p>
+        <p>{{ platform.DateSortie | date('d/m/Y') }}</p>
+        <p>{{ platform.Prix }} €</p>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+
+

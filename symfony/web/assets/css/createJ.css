@@ -1,0 +1,69 @@
+/*.form-control{*/
+    /*width: 15%;*/
+    /*margin-left: 43%;*/
+/*}*/
+.createJeux{
+    color: white;
+}
+button{
+    color: black;
+    display: inline;
+}
+button, select{
+    color: black;
+}
+input{
+    color: black;
+}
+.titre{
+    margin-top: 50px;
+    color: white;
+    margin-bottom: 150px;
+}
+.tabJeu{
+    text-align: center;
+    color: white;
+}
+body{
+    text-align: center;
+}
+
+.test{
+    border: 1px solid white;
+}
+th{
+    text-align: center;
+    font-size: x-large;
+}
+
+.form-group .form-group{
+    margin: 0;
+    padding: 5px 10px;
+}
+.btn-danger{
+    margin-top: 15px;
+}
+/*.inputNom{*/
+    /*width: 50%;*/
+/*}*/
+
+.thumbnail{
+    height: 300px;
+}
+
+.thumbnail .tmb_img{
+    height: 200px;
+    width: auto;
+    margin-bottom: 50px;
+}
+.container{
+    padding-top: 75px;
+}
+
+#div{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 320px;
+    /*width: 1000px;*/
+    padding-right: 20px;
+}

@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <div class="container">
+        <div style="color: white; text-align: center">
+            <h1>Catégories</h1>
+            {% for cat in categories %}
+                {{ cat.categoryName }}
+                <span><a href="{{ path("main_category_update", {"id": cat.id}) }}">Modifier</a></span>
+                <span><a href="{{ path("main_category_delete", {"id": cat.id}) }}">Supprimer</a></span>
+                <br>
+            {% endfor %}
+            <a href="{{ path('main_category_create') }}">
+                <button>Nouveau</button>
+            </a>
+        </div>
+    </div>
+{% endblock %}
